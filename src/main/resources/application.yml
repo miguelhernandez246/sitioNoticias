@@ -1,0 +1,24 @@
+server:
+  port: 8347
+  
+logging:
+  file:
+    max-history: 20 
+    path: logs
+  level:
+    com:
+      zaxxer:
+        hikari:
+          pool:
+            PoolBase: ERROR
+            
+---
+# ===================================
+#        DESARROLLO Y DEFAULT
+spring:
+  profiles: desarrollo, default
+  datasource:
+    url: jdbc:mysql://localhost:8889/sitioNoticias?autoReconnect=true&noAccessToProcedureBodies=true
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
